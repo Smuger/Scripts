@@ -67,4 +67,31 @@ Check file size in directory
 du -h --max-depth=1 .
 ```
 
+format new drive
+```
+lsblk -fl
+sudo parted /dev/sdX
+print
+mkpart primary ex4 startByte endByte
+quit
+sudo mkfs.ext4 -F /dev/sdXY 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
