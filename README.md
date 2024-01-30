@@ -58,3 +58,13 @@ scrape_configs:
     - demo.promlabs.com:1001
     - demo.promlabs.com:1002
 ```
+
+
+Linux
+
+Check file size in directory
+```
+du -h --max-depth=1 .
+```
+
+
