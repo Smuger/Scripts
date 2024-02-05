@@ -61,6 +61,33 @@ scrape_configs:
 
 
 Linux
+---
+
+Swap memory
+```
+sudo mkswap /dev/nvme1n1p1
+sudo swapon /dev/nvme1n1p1
+```
+
+List UUID
+```
+lsblk -o NAME,UUID
+```
+
+Show open ports
+```
+sudo lsof -i -n
+```
+
+Find a string in directory
+```
+grep -rni "string" *
+```
+
+Send public key to a host  
+```
+ssh-copy-id -i ./key.pub <HOST>@<IP>
+```
 
 Check file size in directory
 ```
@@ -77,11 +104,62 @@ quit
 sudo mkfs.ext4 -F /dev/sdXY 
 ```
 
+---
+DCV Nice
+
+Create session
+```
+dcv create-session --owner $user --user $user $(echo $user | tr -d '.')
+```
+
+List sessions
+```
+dcv list-sessions
+```
 
 
+Github
+---
 
+Squash PR (n= Number or commits)
+```
+git fetch origin
 
+git checkout <branch-name>
 
+git rebase -i HEAD~n
+```
+```
+pick abc123 Commit message 1
+squash def456 Commit message 2
+squash ghi789 Commit message 3
+```
+```
+git push origin <branch-name> --force
+```
+
+Tailscale
+---
+
+Install
+```
+curl -fsSL https://tailscale.com/install.sh | sh
+
+# Exit node
+echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+firewall-cmd --permanent --add-masquerade
+sudo tailscale up --advertise-exit-node
+```
+
+nmap
+---
+
+Scan ports
+```
+nmap -Pn 10.20.9.174
+```
 
 
 
