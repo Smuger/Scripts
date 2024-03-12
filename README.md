@@ -74,6 +74,11 @@ List UUID
 lsblk -o NAME,UUID
 ```
 
+List TCP network files
+```
+lsof -PiTCP
+```
+
 Show open ports
 ```
 sudo lsof -i -n
