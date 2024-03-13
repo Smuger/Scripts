@@ -101,12 +101,15 @@ du -h --max-depth=1 .
 
 format new drive
 ```
-lsblk -fl
-sudo parted /dev/sdX
-print
-mkpart primary ex4 startByte endByte
+lsblk
+fdisk /dev/nvme4n1
+n
+p
 quit
-sudo mkfs.ext4 -F /dev/sdXY 
+1
+w
+sudo mkfs.ext4 /dev/nvme4n1
+mount /dev/nvme4n1p1 /mount_point
 ```
 
 ---
