@@ -59,6 +59,16 @@ scrape_configs:
     - demo.promlabs.com:1002
 ```
 
+AWS
+---
+
+FSx Lustre on Centos 7 (3.10.0-1160.108.1.el7.x86_64)
+```
+curl https://fsx-lustre-client-repo-public-keys.s3.amazonaws.com/fsx-rpm-public-key.asc -o /tmp/fsx-rpm-public-key.asc
+sudo rpm --import /tmp/fsx-rpm-public-key.asc
+sudo curl https://fsx-lustre-client-repo.s3.amazonaws.com/el/7/fsx-lustre-client.repo -o /etc/yum.repos.d/aws-fsx.repo
+sudo yum install -y kmod-lustre-client lustre-client
+```
 
 Linux
 ---
