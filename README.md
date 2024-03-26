@@ -1,3 +1,32 @@
+Ansible
+---
+Install on raspberry pi 3
+```
+sudo apt install python3-pip -y
+sudo pip3 install ansible
+```
+
+Install on raspberry pi 4
+```
+sudo apt install python3-pip -y
+# Open a new python virtual environment
+pip3 install ansible
+```
+
+Install on MacOS
+```
+python3 -m pip install --user ansible
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc 
+```
+
+Python virtual environment
+---
+```
+python3 -m venv newenv
+source newenv/bin/activate
+```
+
 Prometheus
 ---
 Client
