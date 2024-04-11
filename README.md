@@ -120,7 +120,7 @@ lsof -PiTCP
 
 Show open ports
 ```
-sudo lsof -i -n
+netstat -plunt
 ```
 
 Find a string in directory
