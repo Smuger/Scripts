@@ -102,6 +102,15 @@ sudo yum install -y kmod-lustre-client lustre-client
 Linux
 ---
 
+Check if TCP port is open
+```
+nc -zv 192.0.2.1 80
+```
+Check if UDP port is open
+```
+nc -zvu 192.0.2.1 123
+```
+
 Swap memory
 ```
 sudo mkswap /dev/nvme1n1p1
