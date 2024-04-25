@@ -1,3 +1,21 @@
+Python
+---
+
+Check which versions are installed (pyenv)
+```
+pyenv versions
+```
+
+List versions you can install (pyenv)
+```
+pyenv install --list
+```
+
+Install new version (pyenv)
+```
+pyenv install -v 3.8.18
+```
+
 Ansible
 ---
 Install on raspberry pi 3
@@ -18,13 +36,6 @@ Install on MacOS
 python3 -m pip install --user ansible
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc 
-```
-
-Python virtual environment
----
-```
-python3 -m venv newenv
-source newenv/bin/activate
 ```
 
 Prometheus
