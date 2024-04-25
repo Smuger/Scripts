@@ -228,7 +228,16 @@ Scan ports
 nmap -Pn 10.20.9.174
 ```
 
+Terraform
+---
 
+Change Version
+```
+terraform --version
+tfenv list 
+tfenv install 1.3.9
+tfenv use 1.3.9
+```
 
 
 
