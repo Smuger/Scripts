@@ -110,6 +110,14 @@ sudo curl https://fsx-lustre-client-repo.s3.amazonaws.com/el/7/fsx-lustre-client
 sudo yum install -y kmod-lustre-client lustre-client
 ```
 
+Docker
+---
+
+Check Docker image platform
+```
+docker image inspect busybox --format '{{ .Os }}/{{ .Architecture }}'
+```
+
 Linux
 ---
 
