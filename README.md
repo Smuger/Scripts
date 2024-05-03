@@ -1,3 +1,11 @@
+Debuging
+---
+
+HTTP server
+```
+sudo python3 -m http.server 80
+```
+
 Python
 ---
 
