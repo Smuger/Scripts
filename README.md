@@ -1,3 +1,31 @@
+Github
+---
+
+Github switch accounts in terminal
+```
+gh auth switch
+gh repo clone <repo-https>
+```
+
+Squash PR (n= Number or commits)
+```
+git fetch origin
+
+git checkout <branch-name>
+
+git rebase -i HEAD~n
+```
+```
+pick abc123 Commit message 1
+squash def456 Commit message 2
+squash ghi789 Commit message 3
+```
+```
+git push origin <branch-name> --force
+```
+
+
+
 Debuging
 ---
 
@@ -198,33 +226,6 @@ dcv create-session --owner $user --user $user $(echo $user | tr -d '.')
 List sessions
 ```
 dcv list-sessions
-```
-
-
-Github
----
-
-Github switch accounts in terminal
-```
-gh auth switch
-gh repo clone <repo-https>
-```
-
-Squash PR (n= Number or commits)
-```
-git fetch origin
-
-git checkout <branch-name>
-
-git rebase -i HEAD~n
-```
-```
-pick abc123 Commit message 1
-squash def456 Commit message 2
-squash ghi789 Commit message 3
-```
-```
-git push origin <branch-name> --force
 ```
 
 Tailscale
