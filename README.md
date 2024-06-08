@@ -204,6 +204,12 @@ dcv list-sessions
 Github
 ---
 
+Github switch accounts in terminal
+```
+gh auth switch
+gh repo clone <repo-https>
+```
+
 Squash PR (n= Number or commits)
 ```
 git fetch origin
