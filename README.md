@@ -149,6 +149,11 @@ sudo yum install -y kmod-lustre-client lustre-client
 Docker
 ---
 
+Clean docker runner
+```
+docker system prune -a
+```
+
 Check Docker image platform
 ```
 docker image inspect busybox --format '{{ .Os }}/{{ .Architecture }}'
