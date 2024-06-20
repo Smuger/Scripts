@@ -267,6 +267,11 @@ List resources
 terraform state list
 ```
 
+Remove resource from state
+```
+terraform state rm
+```
+
 
 
 
