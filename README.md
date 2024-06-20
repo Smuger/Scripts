@@ -262,6 +262,11 @@ tfenv install 1.3.9
 tfenv use 1.3.9
 ```
 
+List resources
+```
+terraform state list
+```
+
 
 
 
