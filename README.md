@@ -24,6 +24,13 @@ squash ghi789 Commit message 3
 git push origin <branch-name> --force
 ```
 
+React Native
+
+Debug mode
+```
+CMD + D
+```
+
 
 
 Debuging
