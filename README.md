@@ -3,7 +3,17 @@ Check certificate
 
 https://www.sslshopper.com/ssl-checker.html
 
+Kubernetes
+---
 
+Forward K8s service via Bastion (Ubuntu)
+```bash
+ssh -L (Port-On-Your-Machine):(K8s-Service-Local-IP):(Port-Of-The-Service-In-K8s) -J ubuntu@(Bastion-IP) ubuntu@(Master-Node-IP)
+```
+e.g.
+```bash
+ssh -L 9400:10.10.0.1:9400 -J ubuntu@38.100.100.100 ubuntu@10.0.0.1
+```
 
 Github
 ---
