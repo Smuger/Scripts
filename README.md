@@ -239,17 +239,22 @@ Check file size in directory
 du -h --max-depth=1 .
 ```
 
-format new drive
+format new drive (Prepare new EBS Volume added to EC2)
 ```
-lsblk
-fdisk /dev/nvme4n1
-n
-p
-quit
-1
-w
-sudo mkfs.ext4 /dev/nvme4n1
-mount /dev/nvme4n1p1 /mount_point
+sudo fdisk /dev/nvme1n1
+
+# n
+# p
+# 1
+# ENTER
+# w
+
+sudo mkfs.ext4 /dev/nvme1n1p1
+sudo mkdir -p /local
+sudo mount /dev/nvme1n1p1 /local
+sudo blkid /dev/nvme1n1p1
+vi /etc/fstab
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local defaults,nofail defaults 0 2
 ```
 
 ---
