@@ -3,6 +3,23 @@ Check certificate
 
 https://www.sslshopper.com/ssl-checker.html
 
+Ubuntu
+---
+
+Upgrade Distro
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt dist-upgrade -y
+sudo apt autoremove --purge -y
+sudo apt autoclean
+sudo reboot
+sudo su
+sudo do-release-upgrade # Install upgrade
+
+# POST
+sudo apt autoremove --purge
+```
+
 Kubernetes
 ---
 
