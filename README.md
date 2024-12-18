@@ -1,3 +1,16 @@
+StrongSwan
+---
+
+Debugging
+```bash
+tcpdump -i Tunnel1 icmp
+nc -l 12345
+nc <server-ip> 12345 -v
+iptables-save > iptables_backup
+ip route show table all
+```
+
+
 Check certificate
 ---
 
