@@ -8,6 +8,7 @@ nc -l 12345
 nc <server-ip> 12345 -v
 iptables-save > iptables_backup
 ip route show table all
+cat /proc/sys/net/ipv4/ip_forward
 ```
 
 
@@ -205,6 +206,11 @@ sudo yum install -y kmod-lustre-client lustre-client
 
 Docker
 ---
+
+Give current user access to Docker
+```
+sudo usermod -aG docker $USER && newgrp docker
+```
 
 Clean docker runner
 ```
