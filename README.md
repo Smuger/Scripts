@@ -11,6 +11,7 @@ ip route show table all
 cat /proc/sys/net/ipv4/ip_forward
 sudo ip xfrm state
 sudo ip xfrm policy
+ip tunnel
 ```
 
 
