@@ -12,6 +12,8 @@ cat /proc/sys/net/ipv4/ip_forward
 sudo ip xfrm state
 sudo ip xfrm policy
 ip tunnel
+tail -100 /var/log/auth.log | grep charon
+cat /proc/sys/net/ipv4/ip_forward
 ```
 
 
