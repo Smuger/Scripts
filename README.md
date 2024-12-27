@@ -16,6 +16,8 @@ tail -100 /var/log/auth.log | grep charon
 cat /proc/sys/net/ipv4/ip_forward
 cat /var/log/syslog | grep "UFW BLOCK" # Check if UFW is blocking stuff
 ip route get to 172.31.21.160
+sudo iptables -t nat -I POSTROUTING 1 -s 172.31.0.0/16 -o ens3 -j LOG --log-prefix "NAT DEBUG: "
+swanctl --list-sas
 ```
 
 
@@ -231,6 +233,11 @@ docker image inspect busybox --format '{{ .Os }}/{{ .Architecture }}'
 
 Linux
 ---
+
+Finda a file
+```
+find / -name NAME
+```
 
 Check space in an easy to read way
 ```
