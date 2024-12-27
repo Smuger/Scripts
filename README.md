@@ -15,6 +15,7 @@ ip tunnel
 tail -100 /var/log/auth.log | grep charon
 cat /proc/sys/net/ipv4/ip_forward
 cat /var/log/syslog | grep "UFW BLOCK" # Check if UFW is blocking stuff
+ip route get to 172.31.21.160
 ```
 
 
