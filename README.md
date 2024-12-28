@@ -18,7 +18,7 @@ cat /var/log/syslog | grep "UFW BLOCK" # Check if UFW is blocking stuff
 ip route get to 172.31.21.160
 sudo iptables -t nat -I POSTROUTING 1 -s 172.31.0.0/16 -o ens3 -j LOG --log-prefix "NAT DEBUG: "
 swanctl --list-sas
-sudo tshark -i ens3 -f "icmp" -w /tmp/ens3.pcap
+sudo tshark -i ens3 -f "icmp" -V
 ```
 
 
