@@ -20,6 +20,7 @@ sudo iptables -t nat -I POSTROUTING 1 -s 172.31.0.0/16 -o ens3 -j LOG --log-pref
 swanctl --list-sas
 sudo tshark -i ens3 -f "icmp" -V
 conntrack -L
+sudo iptables -t nat -L POSTROUTING -n -v # Check where packets are coming from
 ```
 
 
