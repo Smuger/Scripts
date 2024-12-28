@@ -21,6 +21,9 @@ swanctl --list-sas
 sudo tshark -i ens3 -f "icmp" -V
 conntrack -L
 sudo iptables -t nat -L POSTROUTING -n -v # Check where packets are coming from
+
+iptables -t nat -D POSTROUTING -s 172.31.0.0/16 -o ens3 -j MASQUERADE # Delete nat iptables rule
+iptables -t nat -A POSTROUTING -s 172.31.0.0/16 -o ens3 -j MASQUERADE # Add nat iptables rule
 ```
 
 
