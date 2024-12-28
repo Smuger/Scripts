@@ -24,6 +24,8 @@ sudo iptables -t nat -L POSTROUTING -n -v # Check where packets are coming from
 
 iptables -t nat -D POSTROUTING -s 172.31.0.0/16 -o ens3 -j MASQUERADE # Delete nat iptables rule
 iptables -t nat -A POSTROUTING -s 172.31.0.0/16 -o ens3 -j MASQUERADE # Add nat iptables rule
+
+sudo hping3 -a 172.31.0.5 -1 10.0.1.243 # send ping using different source address
 ```
 
 
