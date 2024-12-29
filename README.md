@@ -26,6 +26,12 @@ iptables -t nat -D POSTROUTING -s 172.31.0.0/16 -o ens3 -j MASQUERADE # Delete n
 iptables -t nat -A POSTROUTING -s 172.31.0.0/16 -o ens3 -j MASQUERADE # Add nat iptables rule
 
 sudo hping3 -a 172.31.0.5 -1 10.0.1.243 # send ping using different source address
+
+sudo ip route add 172.31.0.0/16 via 10.0.1.103 dev ens3 # Route traffic via VPN
+
+sudo ufw allow from 152.37.100.101 to any port 22
+sudo ufw allow from 35.80.100.101 to any port 500 proto udp
+sudo ufw status verbose
 ```
 
 
