@@ -35,6 +35,15 @@ sudo ufw allow from 10.0.0.0/8
 sudo ufw status verbose
 ```
 
+EKS
+---
+
+Access cluster
+```bash
+aws eks --region REGION update-kubeconfig --name CLUSTER_NAME
+```
+
+
 
 Check certificate
 ---
