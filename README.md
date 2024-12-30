@@ -40,9 +40,7 @@ NVIDIA
 ---
 
 Check drivers
-```bash
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags
-```
 
 EKS
 ---
