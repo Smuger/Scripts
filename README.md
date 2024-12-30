@@ -31,6 +31,7 @@ sudo ip route add 172.31.0.0/16 via 10.0.1.103 dev ens3 # Route traffic via VPN
 
 sudo ufw allow from 152.37.100.101 to any port 22
 sudo ufw allow from 35.80.100.101 to any port 500 proto udp
+sudo ufw allow from 10.0.0.0/8
 sudo ufw status verbose
 ```
 
