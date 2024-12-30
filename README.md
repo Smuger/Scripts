@@ -35,6 +35,15 @@ sudo ufw allow from 10.0.0.0/8
 sudo ufw status verbose
 ```
 
+
+NVIDIA
+---
+
+Check drivers
+```bash
+https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags
+```
+
 EKS
 ---
 
