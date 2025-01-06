@@ -42,6 +42,20 @@ NVIDIA
 Check drivers
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags
 
+
+AWS SSM
+---
+
+Setup SSM on Amazon Linux 2023
+---
+```bash
+# 1. Attach IAM role with permissions: AmazonSSMManagedInstanceCore
+
+# 2. Run in user data:
+sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+sudo systemctl status amazon-ssm-agent
+```
+
 EKS
 ---
 
