@@ -35,6 +35,18 @@ sudo ufw allow from 10.0.0.0/8
 sudo ufw status verbose
 ```
 
+Google Takeout Photo 
+---
+
+Date fix
+```
+# Install exiftool
+exiftool "-FileModifyDate<DateTimeOriginal" *
+exiftool "-FileModifyDate<MediaCreateDate" *
+exiftool "-FileModifyDate<ModifyDate" *
+exiftool -d "%s" -tagsfromfile %d%f.%e.json "-DateTimeOriginal<PhotoTakenTimeTimestamp" "-FileCreateDate<PhotoTakenTimeTimestamp" "-FileModifyDate<PhotoTakenTimeTimestamp" -overwrite_original .
+```
+
 
 NVIDIA
 ---
