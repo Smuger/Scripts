@@ -54,6 +54,21 @@ NVIDIA
 Check drivers
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags
 
+Install driver on VM Rocky 8 
+---
+```
+sudo dnf makecache
+sudo dnf upgrade -y
+sudo dnf install -y pciutils
+sudo dnf install -y epel-release
+sudo dnf install -y dkms
+sudo dnf install -y gcc kernel-devel kernel-headers dkms make
+
+wget https://uk.download.nvidia.com/tesla/550.127.08/nvidia-driver-local-repo-rhel8-550.127.08-1.0-1.x86_64.rpm
+sudo rpm -i nvidia-driver-local-repo-rhel8-550.127.08-1.0-1.x86_64.rpm
+sudo dnf -y module install nvidia-driver:latest-dkms
+```
+
 
 AWS SSM
 ---
