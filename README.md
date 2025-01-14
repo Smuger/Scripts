@@ -64,9 +64,15 @@ sudo dnf install -y epel-release
 sudo dnf install -y dkms
 sudo dnf install -y gcc kernel-devel kernel-headers dkms make
 
+# Driver
 wget https://uk.download.nvidia.com/tesla/550.127.08/nvidia-driver-local-repo-rhel8-550.127.08-1.0-1.x86_64.rpm
 sudo rpm -i nvidia-driver-local-repo-rhel8-550.127.08-1.0-1.x86_64.rpm
 sudo dnf -y module install nvidia-driver:latest-dkms
+
+# Toolkit
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
+sudo dnf config-manager --enable nvidia-container-toolkit-experimental
+dnf install -y nvidia-container-toolkit
 ```
 
 
