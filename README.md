@@ -79,7 +79,7 @@ dnf install -y nvidia-container-toolkit
 AWS SSM
 ---
 
-Setup SSM on Amazon Linux 2023
+Setup SSM on Amazon  2023
 ---
 ```bash
 # 1. Attach IAM role with permissions: AmazonSSMManagedInstanceCore
@@ -311,6 +311,12 @@ docker image inspect busybox --format '{{ .Os }}/{{ .Architecture }}'
 
 Linux
 ---
+
+Find old ssh sessions and kill them
+```
+pstree -p
+kill <NUMBER>
+```
 
 Finda a file
 ```
