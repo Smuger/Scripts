@@ -1,3 +1,11 @@
+Private Public Key
+---
+
+Create public key from private
+```bash
+ssh-keygen -y -f private.key
+```
+
 StrongSwan
 ---
 
