@@ -1,3 +1,11 @@
+SCP
+---
+
+Send a file over using key to login
+```bash
+scp -i ~/.ssh/id_rsa myfile.txt user@192.168.1.100:/home/user/
+```
+
 Datadog
 ---
 
