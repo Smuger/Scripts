@@ -1,3 +1,11 @@
+Datadog
+---
+
+Check if linux agent is sending the logs
+```bash
+sudo datadog-agent status
+```
+
 Private Public Key
 ---
 
