@@ -112,11 +112,9 @@ Upgrade Distro
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt dist-upgrade -y
-sudo apt autoremove --purge -y
-sudo apt autoclean
 sudo reboot
-sudo su
-sudo do-release-upgrade # Install upgrade
+sudo do-release-upgrade -f DistUpgradeViewNonInteractive
+sudo reboot
 
 # POST
 sudo apt autoremove --purge
