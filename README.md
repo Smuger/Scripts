@@ -1,3 +1,11 @@
+UFW
+---
+
+Check if anything gets blocked
+```bash
+sudo tail -f /var/log/syslog | grep UFW
+```
+
 SCP
 ---
 
