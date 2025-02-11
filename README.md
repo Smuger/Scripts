@@ -160,6 +160,11 @@ Find where pods are running
 kubectl get pods -A -o=custom-columns='NAMESPACE:.metadata.namespace,POD:.metadata.name,NODE:.spec.nodeName'
 ```
 
+Check if BGP v2 is installed for Cilium
+```
+kubectl api-resources | grep BGP
+```
+
 Forward K8s service via Bastion (Ubuntu)
 ```bash
 ssh -L (Port-On-Your-Machine):(K8s-Service-Local-IP):(Port-Of-The-Service-In-K8s) -J ubuntu@(Bastion-IP) ubuntu@(Master-Node-IP)
