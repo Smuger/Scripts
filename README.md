@@ -353,6 +353,11 @@ docker image inspect busybox --format '{{ .Os }}/{{ .Architecture }}'
 Linux
 ---
 
+Generate new UUID for a drive
+```bash
+xfs_admin -U generate /dev/vdg
+```
+
 Find old ssh sessions and kill them
 ```
 pstree -p
