@@ -22,6 +22,23 @@ Check if linux agent is sending the logs
 sudo datadog-agent status
 ```
 
+Enable DCGM GPU monitoring (Using Docker)
+```
+docker run \
+  --pid=host \
+  --privileged \
+  -e DCGM_EXPORTER_INTERVAL=5000 \
+  --gpus all \
+  -d -v /proc:/proc \
+  -v $PWD/default-counters.csv:/etc/dcgm-exporter/default-counters.csv \
+  -p 9400:9400 \
+  --name dcgm-exporter \
+  --label com.datadoghq.ad.check_names='["dcgm"]' \
+  --label com.datadoghq.ad.init_configs='[{}]' \
+  --label com.datadoghq.ad.instances='[{"openmetrics_endpoint": "http://%%host%%:9400/metrics"}]' \
+  nvcr.io/nvidia/k8s/dcgm-exporter:3.1.7-3.1.4-ubuntu20.04
+```
+
 Private Public Key
 ---
 
