@@ -104,6 +104,16 @@ NVIDIA
 Check drivers
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags
 
+Install on Ubuntu 
+# https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/index.html#ubuntu
+```
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
+dpkg -i cuda-keyring_1.1-1_all.deb
+apt update
+apt install cuda-drivers
+reboot
+```
+
 Install driver on VM Rocky 8 
 ---
 ```
@@ -167,6 +177,46 @@ sudo reboot
 
 # POST
 sudo apt autoremove --purge
+```
+
+Create admin user
+```
+#!/bin/bash
+
+# Variables
+USERNAME="Bad-User_123"               # Change this to your "bad" username
+PUBLIC_KEY="ssh-rsa AAAAB3NzaC1y..."  # Replace with your actual public key
+GROUP="ubuntu"                        # Group to add the user to
+
+# Step 1: Create the user (allowing bad name)
+echo "Creating user: $USERNAME"
+sudo useradd --badname --create-home --shell /bin/bash "$USERNAME"
+
+# Set ownership
+sudo chown "$USERNAME":"$USERNAME" /home/"$USERNAME"
+
+# Step 2: Add user to the sudo group
+echo "Adding $USERNAME to the sudo group"
+sudo usermod -aG sudo "$USERNAME"
+
+# Step 3: Disable sudo password prompt
+echo "Disabling sudo password prompt for $USERNAME"
+echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/"$USERNAME"
+
+# Step 4: Add SSH public key
+echo "Setting up SSH key for $USERNAME"
+sudo mkdir -p /home/"$USERNAME"/.ssh
+echo "$PUBLIC_KEY" | sudo tee /home/"$USERNAME"/.ssh/authorized_keys
+sudo chmod 700 /home/"$USERNAME"/.ssh
+sudo chmod 600 /home/"$USERNAME"/.ssh/authorized_keys
+sudo chown -R "$USERNAME":"$USERNAME" /home/"$USERNAME"/.ssh
+
+# Step 5: Add the user to the specified group
+echo "Adding $USERNAME to the $GROUP group"
+sudo usermod -aG "$GROUP" "$USERNAME"
+
+# Confirmation
+echo "✅ User $USERNAME created and configured successfully!"
 ```
 
 Kubernetes
