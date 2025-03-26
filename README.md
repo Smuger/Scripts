@@ -216,6 +216,9 @@ sudo chown -R "$USERNAME":"$USERNAME" /home/"$USERNAME"/.ssh
 echo "Adding $USERNAME to the $GROUP group"
 sudo usermod -aG "$GROUP" "$USERNAME"
 
+# Step 6: Disable password login to sudo
+echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 # Confirmation
 echo "✅ User $USERNAME created and configured successfully!"
 ```
