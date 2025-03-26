@@ -108,9 +108,10 @@ Install on Ubuntu
 # https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/index.html#ubuntu
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
-dpkg -i cuda-keyring_1.1-1_all.deb
-apt update
-apt install cuda-drivers
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt update
+sudo apt install cuda-drivers
+sudo apt-get install cuda-toolkit
 reboot
 ```
 
