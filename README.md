@@ -53,6 +53,8 @@ StrongSwan
 Debugging
 ```bash
 tcpdump -i Tunnel1 icmp
+tcpdump -i ipsec0 -w ipsec0.pcap
+tshark -r ipsec0.pcap
 nc -l 12345
 nc <server-ip> 12345 -v
 iptables-save > iptables_backup
