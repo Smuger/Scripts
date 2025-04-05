@@ -507,6 +507,7 @@ sudo mkdir -p /local
 sudo mount /dev/nvme1n1p1 /local
 sudo blkid /dev/nvme1n1p1
 vi /etc/fstab
+blkid
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local defaults,nofail defaults 0 2
 ```
 
