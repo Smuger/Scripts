@@ -492,6 +492,7 @@ Check file size in directory
 du -h --max-depth=1 .
 ```
 
+Up to 2.2 TB
 format new drive (Prepare new EBS Volume added to EC2)
 ```
 sudo fdisk /dev/nvme1n1
@@ -509,6 +510,33 @@ sudo blkid /dev/nvme1n1p1
 blkid
 vi /etc/fstab
 UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local defaults,nofail defaults 0 2
+```
+Over 2.2 TB
+```
+sudo gdisk /dev/nvme1n1
+
+# o
+# y
+# n
+# ENTER
+# ENTER
+# ENTER
+# ENTER
+# w
+# y
+
+sudo mkfs.ext4 /dev/nvme1n1p1
+sudo mkdir -p /local
+sudo mount /dev/nvme1n1p1 /local
+```
+
+
+---
+rsync
+
+From remote copy files to current directory (parallel)
+```
+ssh ubuntu@10.0.1.1 'find /data/to_copy -mindepth 1 -maxdepth 1 -type d' | parallel -j 3 'rsync -aP --whole-file --inplace ubuntu@10.0.1.1:{} ./to_copy'
 ```
 
 ---
