@@ -534,7 +534,7 @@ sudo mount /dev/nvme1n1p1 /local
 ---
 rsync
 
-From remote copy files to current directory (parallel)
+This is for local copy between linux boxes. From remote copy files to current directory (parallel)
 ```
 ssh ubuntu@10.0.1.1 'find /data/to_copy -mindepth 1 -maxdepth 1 -type d' | parallel -j 3 'rsync -aP --whole-file --inplace ubuntu@10.0.1.1:{} ./to_copy'
 ```
