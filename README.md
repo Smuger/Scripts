@@ -152,6 +152,15 @@ sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/late
 sudo systemctl status amazon-ssm-agent
 ```
 
+GuardDuty
+---
+
+Generate one finding not a bilion 
+```bash
+aws guardduty list-detectors
+aws guardduty create-sample-findings --detector-id <detector-id> --finding-types "UnauthorizedAccess:EC2/SSHBruteForce"
+```
+
 EKS
 ---
 
