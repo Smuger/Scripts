@@ -509,7 +509,7 @@ sudo mount /dev/nvme1n1p1 /local
 sudo blkid /dev/nvme1n1p1
 blkid
 vi /etc/fstab
-UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local defaults,nofail defaults 0 2
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local defaults,nofail defaults 0 0
 ```
 Over 2.2 TB
 ```
