@@ -509,7 +509,7 @@ sudo mount /dev/nvme1n1p1 /local
 sudo blkid /dev/nvme1n1p1
 blkid
 vi /etc/fstab
-UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local xfs defaults,nofail 0 0
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local ext4 defaults,nofail 0 0
 ```
 Over 2.2 TB
 ```
@@ -528,6 +528,10 @@ sudo gdisk /dev/nvme1n1
 sudo mkfs.ext4 /dev/nvme1n1p1
 sudo mkdir -p /local
 sudo mount /dev/nvme1n1p1 /local
+
+blkid
+vi /etc/fstab
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local ext4 defaults,nofail 0 0
 ```
 
 
