@@ -534,13 +534,16 @@ sudo gdisk /dev/nvme1n1
 # w
 # y
 
-sudo mkfs.ext4 /dev/nvme1n1p1
+# sudo mkfs.ext4 /dev/nvme1n1p1
+sudo mkfs.xfs -n size=4096 /dev/nvme1n1p1
+sudo xfs_admin -L data1 /dev/nvme1n1p1
 sudo mkdir -p /local
 sudo mount /dev/nvme1n1p1 /local
 
 blkid
 vi /etc/fstab
-UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local ext4 defaults,nofail 0 0
+# UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx /local ext4 defaults,nofail 0 0
+LABEL=data1 /local xfs defaults,nofail 0 0
 ```
 
 
