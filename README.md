@@ -548,6 +548,12 @@ LABEL=data1 /local xfs defaults,nofail 0 0
 
 
 ---
+Detach drive, check what's making it busy
+```
+sudo lsof +D /mounted
+```
+
+---
 rsync
 
 This is for local copy between linux boxes. From remote copy files to current directory (parallel)
