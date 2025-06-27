@@ -277,6 +277,16 @@ Host github.com
   User git
   IdentityFile ~/.ssh/git-auth
   IdentitiesOnly yes
+
+Host 10.0.1.*
+    IdentityFile ~/.ssh/dev
+```
+
+Sign commit
+```
+git config --global gpg.format ssh
+git config --global user.signingkey "~/.ssh/git-sign.pub"
+git config --global commit.gpgsign true
 ```
 
 Github switch accounts in terminal
