@@ -1,3 +1,14 @@
+YubiKey
+---
+```bash
+# Git Access
+ssh-keygen -t ed25519-sk -O resident -O verify-required -O user=git-auth -C "git-auth"
+
+# Git sign commit
+ssh-keygen -t ed25519-sk -O resident -O verify-required -O user=git-sign -C "git-sign"
+```
+
+
 UFW
 ---
 
