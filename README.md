@@ -4,7 +4,7 @@ YubiKey
 # Git Access
 ssh-keygen -t ed25519-sk -O resident -O verify-required -O user=git-auth -C "git-auth"
 
-# Git sign commit
+# Git Sign Commit
 ssh-keygen -t ed25519-sk -O resident -O verify-required -O user=git-sign -C "git-sign"
 ```
 
@@ -269,6 +269,15 @@ ssh -L 9400:10.10.0.1:9400 -J ubuntu@38.100.100.100 ubuntu@10.0.0.1
 
 Github
 ---
+
+SSH keys ~/.ssh/config
+```
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/git-auth
+  IdentitiesOnly yes
+```
 
 Github switch accounts in terminal
 ```
