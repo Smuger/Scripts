@@ -8,6 +8,14 @@ ssh-keygen -t ed25519-sk -O resident -O verify-required -O user=git-auth -C "git
 ssh-keygen -t ed25519-sk -O resident -O verify-required -O user=git-sign -C "git-sign"
 ```
 
+s5cmd
+---
+
+Add progress bar to the cp
+```bash
+s5cmd cp --show-progress s3://test-bucket/test.txt .
+```
+
 
 UFW
 ---
