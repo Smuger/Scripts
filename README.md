@@ -190,6 +190,14 @@ https://www.sslshopper.com/ssl-checker.html
 Ubuntu
 ---
 
+Rotate screen of headless Ubuntu by 270 degree
+```bash
+GRUB_FILE="/etc/default/grub"
+sed -i 's/^GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="fbcon=rotate:3"/' "$GRUB_FILE"
+sudo update-grub
+sudo reboot
+```
+
 Upgrade Distro
 ```bash
 sudo apt update && sudo apt upgrade -y
