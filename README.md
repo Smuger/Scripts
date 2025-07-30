@@ -502,6 +502,12 @@ Check space in an easy to read way
 du -h --max-depth=3 . | awk '$1 ~ /[0-9.]+G/ && $1+0 >= 5 {print}'
 ```
 
+Check root directory
+```
+sudo du -hxd1 / | sort -hr | head -n 20
+```
+
+
 Check if TCP port is open
 ```
 nc -zv 192.0.2.1 80
