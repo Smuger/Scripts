@@ -264,6 +264,11 @@ echo "✅ User $USERNAME created and configured successfully!"
 Kubernetes
 ---
 
+Delete secrets for given helm chart
+```bash
+kubectl delete secret -n default -l "owner=helm,name=helm_chart_name"
+```
+
 Find where pods are running
 ```bash
 kubectl get pods -A -o=custom-columns='NAMESPACE:.metadata.namespace,POD:.metadata.name,NODE:.spec.nodeName'
